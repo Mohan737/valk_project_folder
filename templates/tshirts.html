@@ -1,0 +1,719 @@
+<html>
+
+<head>
+    <title>T-shirts</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        /* Create two equal columns that floats next to each other */
+        
+        .column {
+            float: left;
+            height: 430px;
+            width: 50%;
+            padding: 0px;
+            /* Should be removed. Only for demonstration */
+        }
+        
+        .hide {
+            display: none;
+        }
+        
+        .hide:after {
+            display: inline-block;
+        }
+        /* all colors start here */
+        
+        .printbox {
+            width: 100%;
+            height: 100%;
+            /* background-image: url("../static/../static/mt/box.png"); */
+            background-size: 140px;
+            background-repeat: no-repeat;
+            background-position: 50% 55%;
+            z-index: -1;
+        }
+        
+        .watermark {
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 95%;
+        }
+        
+        .bruhblack {
+            width: 100%;
+            height: 100%;
+            background-image: url("../static/mt/black.png");
+            background-size: 290px 300px;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        .backblack {
+            width: 100%;
+            height: 100%;
+            background-image: url("../static/mt/bblack.png");
+            background-size: 290px 300px;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        .bruhwhite {
+            width: 100%;
+            height: 100%;
+            background-image: url("../static/mt/white.png");
+            background-size: 310px 321px;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        .backwhite {
+            width: 100%;
+            height: 100%;
+            background-image: url("../static/mt/bwhite.png");
+            background-size: 310px 321px;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        .bruhneon {
+            width: 100%;
+            height: 100%;
+            background-image: url("../static/mt/yellow.png");
+            background-size: 310px 321px;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        .backneon {
+            width: 100%;
+            height: 100%;
+            background-image: url("../static/mt/byellow.png");
+            background-size: 310px 321px;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        .bruhblue {
+            width: 100%;
+            height: 100%;
+            background-image: url("../static/mt/blue.png");
+            background-size: 310px 321px;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        .backblue {
+            width: 100%;
+            height: 100%;
+            background-image: url("../static/mt/bblue.png");
+            background-size: 330px 342px;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        .bruhgreen {
+            width: 100%;
+            height: 100%;
+            background-image: url("../static/mt/green.png");
+            background-size: 310px 321px;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        .backgreen {
+            width: 100%;
+            height: 100%;
+            background-image: url("../static/mt/bgreen.png");
+            background-size: 310px 321px;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        .bruhmaroon {
+            width: 100%;
+            height: 100%;
+            background-image: url("../static/mt/grey.png");
+            background-size: 310px 321px;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        .backmaroon {
+            width: 100%;
+            height: 100%;
+            background-image: url("../static/mt/bgrey.png");
+            background-size: 310px 321px;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        .bruhred {
+            width: 100%;
+            height: 100%;
+            background-image: url("../static/mt/red.png");
+            background-size: 310px 321px;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        .backred {
+            width: 100%;
+            height: 100%;
+            background-image: url("../static/mt/bred.png");
+            background-size: 310px 321px;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        /* Color selections end here */
+        /* circle buttons */
+        
+        .btn-circle {
+            border: black 1px;
+            width: 45px;
+            height: 45px;
+            line-height: 45px;
+            text-align: center;
+            padding: 5px;
+            border-radius: 50%;
+        }
+        
+        .btn-circle-sm {
+            border: black 20px;
+            width: 35px;
+            height: 35px;
+            line-height: 35px;
+            font-size: 0.9rem;
+            border-radius: 50%;
+        }
+        /* circle buttons end  here */
+        
+        .center {
+            margin: auto;
+            width: 980px;
+            border: 0px solid rgb(255, 255, 255);
+            padding: 10px;
+            box-shadow: 4px 9px 10px 0 rgba(0, 0, 0, 0.541);
+            transition: 0.3s;
+            border-radius: 3%;
+            background: white;
+        }
+        /* ***************************************** */
+        
+        .switch-field {
+            display: flex;
+            margin-bottom: 0px;
+            overflow: hidden;
+        }
+        
+        .switch-field input {
+            position: absolute !important;
+            clip: rect(0, 0, 0, 0);
+            height: 1px;
+            width: 1px;
+            border: 0;
+            overflow: hidden;
+        }
+        
+        .switch-field label {
+            background-color: #ffffff;
+            color: rgba(0, 0, 0, 0.6);
+            font-size: 14px;
+            line-height: 1;
+            text-align: center;
+            padding: 8px 16px;
+            margin-bottom: 4px;
+            border-right: 1px solid rgba(0, 0, 0, 0.2);
+            border-left: 1px solid rgba(0, 0, 0, 0.2);
+            border-bottom: 0.5px solid rgba(0, 0, 0, 0.144);
+            /* box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1); */
+            transition: all 0.1s ease-in-out;
+        }
+        
+        .switch-field label:hover {
+            cursor: pointer;
+        }
+        
+        .switch-field input:checked+label {
+            background-color: rgba(250, 126, 126, 0.829);
+            box-shadow: none;
+        }
+        
+        .switch-field label:first-of-type {
+            border-radius: 4px 0 0 4px;
+        }
+        
+        .switch-field label:last-of-type {
+            border-radius: 0 4px 4px 0;
+        }
+        /* ***************************************** */
+        
+        .center:hover {
+            box-shadow: 5px 18px 50px 0 rgba(0, 0, 0, 0.2);
+        }
+        
+        .fs {
+            display: inline-block;
+            padding: 6px 12px;
+            margin-bottom: 0;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1.42857143;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            -ms-touch-action: manipulation;
+            touch-action: manipulation;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            background-image: none;
+            border: 1px solid transparent;
+            border-radius: 4px;
+        }
+        
+        .dropdown {
+            margin-top: 20px;
+        }
+        
+        .dropdown-menu {
+            /* position: absolute; */
+            /* top: 100%; */
+            left: 0;
+            /* z-index: 1000; */
+            display: none;
+            float: left;
+            min-width: 160px;
+            /* padding: 5px 0; */
+            margin: auto;
+            font-size: 14px;
+            text-align: left;
+            list-style: none;
+            background-color: #fff;
+            /* -webkit-background-clip: padding-box; */
+            background-clip: padding-box;
+            border: 1px solid #ccc;
+            border: 1px solid rgba(0, 0, 0, .15);
+            border-radius: 4px;
+            -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, .175)
+        }
+        
+        .fortext {
+            height: 30px;
+            background: #fffcfc;
+            border-radius: 8px;
+            border: rgb(56, 62, 148) solid;
+            margin: 5px;
+            outline: none;
+        }
+        /* Clear floats after the columns
+        
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }*/
+        
+        .iframe-pop {
+            display: none;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 9999;
+        }
+        
+        .iframe-visible {
+            display: block;
+        }
+        
+        .inner {
+            position: relative;
+            width: 55%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .inner .modal-close {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #fff;
+            position: absolute;
+            top: -30px;
+            right: -30px;
+            z-index: 2;
+            transition: .4s ease;
+        }
+        
+        .inner .modal-close:after {
+            content: '\f00d';
+            font-family: FontAwesome;
+            position: absolute;
+            color: rgba(0, 0, 0, 0.4);
+            font-size: 24px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: .4s ease;
+        }
+        
+        .inner .modal-close:hover {
+            transform: scale(1.1);
+            background-color: red;
+            transition: .4s ease;
+            cursor: pointer;
+        }
+        
+        .inner .modal-close:hover:after {
+            color: #fff;
+            font-size: 28px;
+            transition: .4s ease;
+        }
+        
+        .inner .modal-contain {
+            position: relative;
+            padding-bottom: 56.25%;
+            width: 100%;
+            overflow: hidden;
+            height: 0;
+        }
+        
+        .inner .modal-contain .modal-content {
+            position: absolute;
+            width: 50%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+        
+        .button {
+            color: #fff !important;
+            text-align: center;
+            padding: 10px 15px;
+            border-radius: 50px;
+            display: inline-block;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+            background-color: #454cad;
+            transition: .3s ease;
+        }
+        
+        .button:hover {
+            padding: 15px 20px;
+            cursor: pointer;
+            transition: .3s ease;
+        }
+        
+        .scroll {
+            padding: 4px;
+            height: 130px;
+            overflow-x: hidden;
+            overflow-x: auto;
+            text-align: justify;
+            color: black;
+        }
+        
+        .slider {
+            -webkit-appearance: none;
+            width: 90px;
+            height: 8px;
+            border-radius: 5px;
+            background: #d3d3d3;
+            outline: none;
+            opacity: 0.7;
+            -webkit-transition: .2s;
+            transition: opacity .2s;
+        }
+        
+        .slider:hover {
+            opacity: 1;
+        }
+        
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: black;
+            cursor: pointer;
+        }
+        
+        .slider::-moz-range-thumb {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: black;
+            cursor: pointer;
+        }
+        
+        .backgrounds {
+            background: #000000;
+            color: black;
+            background-image: url("../static/mt/background/spots.png"), url("../static/mt/background/spots.png"), url("../static/mt/background/arrow.png"), url("../static/mt/background/spots.png"), url("../static/mt/background/arrow.png"), url("../static/mt/background/spots.png");
+            background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+            background-position: 2% 10%, 95% 99%, -4% 99%, 89% -2%, 111% 50%, 50% 140%;
+            background-size: 15%, 8%, 20%, 10%, 25%, 20%;
+        }
+        
+        .elements {
+            /* background: #6d676e; */
+            background-image: url("../static/mt/background/red.png"), url("../static/mt/background/red.png"), url("../static/mt/background/black.png"), url("../static/mt/background/black.png"), url("../static/mt/background/black.png"), url("../static/mt/background/black.png");
+            background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+            background-position: 4% 20%, 89% -10%, 99% 99%, 2% -3%, -2% 110%, 75% 30%;
+            background-size: 33%, 20%, 5%, 10%, 10%, 15%;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/all_fonts.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu|Chewy|Quattrocento+Sans|Kaushan+Script|Comfortaa|Lobster+Two|Raleway|Montserrat|Titillium+Web|Josefin+Sans|Pacifico|Orbitron|Josefin+Slab|Satisfy|Economica|Courgette' rel='stylesheet' type='text/css'>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    
+
+</head>
+
+<body class="backgrounds">
+
+    <!-- <body style="background-position: center; background-size: 100% ; background-image: url(./mt/gallery/backdrop3.jpg); background-repeat: no-repeat;"> -->
+
+
+    <div style="width:980px; margin-bottom: 10px;" class="center elements">
+        <img style="width: 80px; height: 80px; display: initial;" src="../static/mt/Valkyre_Logo.png">
+        <h2 style="">Valkyre Design Tool</h2>
+        <h4 style="font-family: Josefin Slab; font-size: 18px; ">Design Your Custom T-shirt</h4>
+        <div style="padding-top: 5%; width: 98%; margin: auto;">
+
+        <!-- user uploaded front image --><div><img id="up_img1" src="" hidden="hidden"></div> <!-- user uploaded front image -->
+        <!-- user uploaded back image --><div><img id="up_img2" src="" hidden="hidden"></div> <!-- user uploaded back image -->
+
+
+            <div class="row">
+                <div class="column" style="background-color:rgb(247, 247, 247); border: 0px solid; border-top-left-radius: 4%; border-bottom-left-radius: 4%;">
+                    <div style="width:50%; margin:auto;">
+                        <form style="padding-top: 0%;" id="file-upload-form" class="uploader">
+                            <input id="file-upload" type="file" name="fileUpload" accept="image/*" />
+                            <label style=" padding:8px; box-shadow:5px 10px 15px #dadada;" for="file-upload" id="file-drag">
+                                <div id="start">
+                                    <button onclick="removeupload()" id="shut" type="button" style="size: 24px; border:rgba(0, 0, 0, .15)" class="close hide" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <!-- <i class="fa fa-download" aria-hidden="true"></i> -->
+                                <div id="art" >Art</div>
+                                <div id="notimage" class="hidden">Please select an image</div>
+                                <span style="background: black;" id="file-upload-btn" class="btn btn-primary">Select a file</span>
+            <h6>Please upload a high resolution image for high quality printing</h6>
+                            </div>
+                            <div id="response" class="hidden">
+                                <div id="messages"></div>
+                  <progress class="progress" id="file-progress" value="0">
+                    <span>0</span>%
+                  </progress>
+                </div>
+              </label>
+                        </form>
+                        <h4 id="or" style="display: inline-block; margin: 5px; color: black;">(or)</h4><br>
+                        <div id="diss" style="margin-top: 4px; display: inline-block;">
+                            <div style="background: white; padding: 5px; border-radius: 2%;box-shadow:5px 10px 15px #dadada;">
+                                <p id="option" style="margin: 5px;">Text</p>
+                                <textarea spellcheck="false" id="tenter" align="center" style="height: 100px ;background: #fffcfc ;border-radius: 8px; border: black solid; margin: 5px;outline: none; color: black;" placeholder="Ex: Subs to Pewds" value=""></textarea>
+                                <div style="height: 40px;">
+                                    <button style="color:black;border: none; background-color: transparent;" onclick="aleft()" class="fa fa-align-left"></button>
+                                    <button style="color:black;border: none; background-color: transparent;" onclick="acent()" class="fa fa-align-center"></button>
+                                    <button style="color:black;border: none; background-color: transparent;" onclick="aright()" class="fa fa-align-right"></button>
+                                    <button style="color:black; border: none; background-color: transparent;" onclick="ajus()" class="fa fa-align-justify"></button>
+                                </div>
+                                <button style="background-color:black; border-radius: .2rem; height: 36px; line-height: 36px; color:white; font-family: inherit; font-size: 14px; font-weight: 700; padding: 0 1rem;" onclick="addtext()">Select</button>
+                                <div style="display: inline;" class="dropdown">
+                                    <button style="color: black; background-color: transparent;" class="fs dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                      Font
+                                      <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu scroll" aria-labelledby="dropdownMenu1">
+                                        <li id="raleway-font" style="font-family: acid-label;"><a href="#">Acid Label</a></li>
+                                        <li id="montserrat-font" style="font-family: antfarm"><a href="#">Antfarm</a></li>
+                                        <li id="titillium-font" style="font-family:bad-mofo"><a href="#">Bad Mofo</a></li>
+                                        <li id="pacifico-font" style="font-family: black-bruno"><a href="#">Black Bruno</a></li>
+                                        <li id="josefin-slab-font" style="font-family:blockletter"><a href="#">Block Letter</a></li>
+                                        <li id="orbitron-font" style="font-family: typewriter"><a href="#">Typewriter</a></li>
+                                        <li id="comfortaa-font" style="font-family: boblique;"><a href="#">Brik Oblique</a></li>
+                                        <li id="courgette-font" style="font-family: rock-it;"><a style=" font-size: 12px;" href="#">Rock It</a></li>
+                                        <li id="ubuntu-font" style="font-family: gm;"><a href="#">Price Down</a></li>
+                                        <li id="chewy-font" style="font-family: mv;"><a href="#">Marvin Vision</a></li>
+                                        <li id="lobster-two-font" style="font-family:sam;"><a href="#">Shamsons</a></li>
+                                        <li id="kaushan-script-font" style="font-family: sw;"><a href="#">Shockwave</a></li>
+                                        <li id="capp" style="font-family: cap;"><a href="#">Capture it</a></li>
+                                        <li id="satisfy-font" style="font-family: du;"><a href="#">Due Date</a></li>
+                                        <li id="ff1" style="font-family: ff1;"><a href="#">Futuro</a></li>
+                                        <li id="ff2" style="font-family: ff2;"><a href="#">Futurab</a></li>
+                                        <li id="ff3" style="font-family: ff3;"><a href="#">Jotarou</a></li>
+                                        <li id="ff4" style="font-family: ff4;"><a href="#">Custom 1</a></li>
+                                        <li id="ff5" style="font-family: ff5;"><a href="#">Custom 2</a></li>
+                                        <li id="ff6" style="font-family: ff6;"><a href="#">Custom 3</a></li>
+                                        <li id="ff7" style="font-family: ff7;"><a href="#">Custom 4</a></li>
+                                        <li id="ff8" style="font-family: ff8;"><a href="#">Custom 5</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hide" id="colors" style="margin-top: 6px;">
+                            <h3 style="color: #000000;">Choose Color:</h3>
+                            <div style="margin: auto;">
+                                <div class="switch-field" style="margin-left: 26px;">
+                                    <input onclick="setf1()" type="radio" id="radio-three" name="switch-two" value="t" checked/>
+                                    <label for="radio-three">Tee</label>
+                                    <input onclick="setf2()" type="radio" id="radio-four" name="switch-two" value="f" />
+                                    <label for="radio-four">Font</label>
+                                    <input onclick="reup()" type="radio" id="radio-five" name="switch-two" value="no" />
+                                    <label for="radio-five">Upload</label>
+                                </div>
+                            </div>
+                            <div id="selectors" class="">
+                                <button onclick="cgreen()" style="border-radius: 50%; background: rgb(9, 158, 9); border: 3px solid black; margin: 3px; outline: none;" class="btn btn-circle btn-circle-sm "></button>
+                                <button onclick="cblue()" style="border-radius: 50%; background: rgb(57, 57, 236); border: 3px solid black; margin: 3px; outline: none;" class="btn btn-circle btn-circle-sm "></button>
+                                <button onclick="cblack()" style="border-radius: 50%; background: rgb(43, 41, 41); border: 3px solid black; margin: 3px; outline: none;" class="btn btn-circle btn-circle-sm "></button>
+                                <button onclick="cred()" style="border-radius: 50%; background: rgb(212, 69, 69); border: 3px solid black; margin: 3px; outline: none;" class="btn btn-circle btn-circle-sm "></button>
+                                <br>
+                                <button onclick="cmar()" style="border-radius: 50%; background: rgb(65, 62, 62); border: 3px solid black; margin: 3px; outline: none;" class="btn btn-circle btn-circle-sm "></button>
+                                <button onclick="cneon()" style="border-radius: 50%; background: yellow; border: 3px solid black; margin: 3px; outline: none;" class="btn btn-circle btn-circle-sm "></button>
+                                <button onclick="cwhite()" style="border-radius: 50%;  background: rgb(247, 244, 244); border: 3px solid black; margin: 3px; outline: none;" class="btn btn-circle btn-circle-sm "></button>
+                            </div>
+                            <div id="re-up" class="hide">
+                                <form style="padding-top: 8px;" id="file-upload-form" class="uploader">
+                                    <input id="file-upload" type="file" name="fileUpload" accept="image/*" />
+                                    <label style=" padding:8px; border: none; background: transparent;" for="file-upload" id="file-drag">
+                                        <div id="start">
+                                            <button onclick="removeupload()" id="shut" type="button" style="size: 24px; border:rgba(0, 0, 0, .15)" class="close hide" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <!-- <i class="fa fa-download" aria-hidden="true"></i> -->
+                                        <div id="notimage" class="hidden">Please select an image</div>
+                                        <span style="background: black;" id="file-upload-btn" class="btn btn-primary">Re-upload</span>
+                                    </div>
+                                    <div id="response" class="hidden">
+                                        <div id="messages"></div>
+                                        <progress class="progress" id="file-progress" value="0">
+                                             <span>0</span>%
+                                        </progress>
+                                     </div>
+                                    </label>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column" style="background-color:rgb(248, 248, 248); border: 0px solid; border-top-right-radius: 4%; border-bottom-right-radius: 4%;">
+                    <div id="tee" style="z-index: 1;" class="bruhblack">
+                        <div id="fwat" class="watermark">
+                            <div id="fbox" style="" class="printbox">
+                                <div id="textoutput" style=" text-align: initial;display: inline-block ;user-select: none;top:140px;z-index: 2 ; position: relative; margin:auto; color:white;"></div>
+                                <img style="object-fit: cover;left: 0px; width: 90px;z-index: 1;top: 160px; position: relative;" width="90px" id="file-image" src="#" alt="Preview" class="hide" ondragstart="return false;">
+                            </div>
+                        </div>
+                    </div>
+                    <div id="teeb" style="z-index: 1;" class="backblack hide">
+                        <div id="bwat" class="watermark">
+                            <div id="bbox" style="" class="printbox">
+                                <img style="object-fit: cover; left: 0px; width: 90px;z-index: 1;top: 160px; position: relative;" width="90px" id="back-image" src="#" alt="Preview" class="hide" ondragstart="return false;">
+                                <div id="reartext" style=" text-align: initial;display: inline-block ;user-select: none;top:140px;z-index: 2 ; position: relative; margin:auto; color:white;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="rottee()" id="rot" style="font-size: 26px; background: rgba(255, 255, 255, 0); border: none; display: -webkit-inline-box; outline: none;  text-align: center; " class="fa fa-refresh"></button>
+                    <label id="dir" style="display: block;" class="">Front</label>
+                    <button onclick="rottee()" id="rotb" style="font-size: 26px; background: rgba(255, 255, 255, 0); border: none; display: -webkit-inline-box; outline: none;  text-align: center; " class="fa fa-refresh hide"></button>
+                    <label id="dirb" style="display: block;" class="hide">Back</label>
+                </div>
+            </div>
+        </div>
+
+        <br>
+        <div style="width: 33%; float: left;" id="pic" class="hide">
+            <p style="margin:9px;font-weight: 200; font-size: 22px; color: black;">
+                Image Size:
+                <!-- <input style="width: 90px; border-radius: 13px; background-color: rgb(245, 240, 240); text-align: center;box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.1); border: chartreuse" type="number" value="90" id="im-w"> -->
+            </p>
+            <input ontouchmove="changeS()" onclick="changeS()" style="width: 50%; display: inline;" type="range" min="1" max="210" value="90" class="slider" id="im-w">
+        </div>
+        <div style="width: 33%; float: left;" id="texx" class="hide">
+            <p style="margin:9px; font-weight: 200; font-size: 22px; color: black;">
+                Font Size:
+                <!-- <input style="width: 80px; border-radius: 13px; background-color: rgb(245, 240, 240); text-align: center;box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.1); ;border: chartreuse" type="number" value="14" id="t-h"> -->
+                <!-- <input onclick="changet()" type="range" min="1" max="40" value="15" class="slider" id="t-h"> -->
+            </p>
+            <input ontouchmove="changet()" onclick="changet()" style="width: 50%; display: inline;" type="range" min="1" max="40" value="15" class="slider" id="t-h">
+
+        </div>
+        <div class="hide" style="display: -webkit-inline-box; margin-left: 50%;" id="cost">
+            <p style="color: black;">Cost: Rs&nbsp;</p>
+            <p style="color: black;" id="amnt">699</p>
+        </div>
+
+        <div style="display: flow-root;width: 100%; ">
+<!--             <a id="download" download="image.png"><button style="background-color:black; border-radius: .2rem; height: 36px; line-height: 36px; color:white; font-family: inherit; font-size: 14px; font-weight: 700; padding: 0 1rem;" type="button" onClick="save()">save</button></a>
+            <a id="download" download="image.png"><button style="background-color:black; border-radius: .2rem; height: 36px; line-height: 36px; color:white; font-family: inherit; font-size: 14px; font-weight: 700; padding: 0 1rem;" type="button" onClick=" document.location='./t_c.html'">Checkout</button></a> -->
+<!--             <button style="background-color:black; border-radius: .2rem; height: 36px; line-height: 36px; color:white; font-family: inherit; font-size: 14px; font-weight: 700; padding: 0 1rem;" type="button" onClick="save()">Save</button>
+            <button style="background-color:black; border-radius: .2rem; height: 36px; line-height: 36px; color:white; font-family: inherit; font-size: 14px; font-weight: 700; padding: 0 1rem;" type="button" onClick="getcost()">Checkout</button> -->
+            <button style="background-color:black; border-radius: .2rem; height: 36px; line-height: 36px; color:white; font-family: inherit; font-size: 14px; font-weight: 700; padding: 0 1rem;" type="button" onClick="save();getcost()">Save & Proceed</button>
+            
+                                <!-- <form class="hidden" action="amount" method="POST" id="ord_form"> -->
+                                    <!-- <input type="text" id="myText" value="Mickey"> -->
+                                    <!-- <p id="od_amount"></p> -->
+                                    <!-- <input type="text" id="od_amount" name="od_amount" value=""> -->
+                                <!-- </form> -->
+            <h6>Kindly check the customize designs on both sides before clicking " Save and Proceed "</h6>
+                                
+        </div>
+    </div>
+    <div id="combine" class="hide">
+        <div id="p1" style="width: 50%; float: left;">
+        </div>
+        <div id="p2" style="width: 50%; float: left;">
+        </div>
+    </div>
+</body>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.4.1/jspdf.debug.js'></script>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script src='https://html2canvas.hertzen.com/dist/html2canvas.js'></script>
+<script src='https://html2canvas.hertzen.com/dist/html2canvas.min.js'></script>
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>
+
+
+<script src="../static/js/script.js"></script>
+<script src="../static/js/tees.js"></script>
+
+<script type="text/javascript">
+    function getcost(){  
+        //---------------gettting the user uploaded image-----------------
+        var upimg1 = document.getElementById("up_img1");
+        var upimg2 = document.getElementById("up_img2");
+        // console.log(upimg1.src)
+        // console.log(upimg2.src)
+        localStorage.setItem("uplimg1", upimg1.src); 
+        localStorage.setItem("uplimg2", upimg2.src); 
+ 
+        //---------------gettting the values-----------------
+        var money = document.getElementById("amnt").textContent;
+        // console.log("amount: "+ money);
+        //-------------saving the values in local storage------------------                
+        localStorage.setItem("costmoney", money);
+        // var inputF = document.getElementById("od_amount");
+        // inputF.setAttribute('value', money);
+        // document.getElementById('od_amount').innerHTML = money
+        window.open("checkout.html");
+
+                // //-------------amount transfer to flask using form------------------                
+                // document.forms[2].od_amount.value = money;
+                // // var cos_amnt = document.getElementById("od_amount").value;
+                // // alert("amount form : "+ cos_amnt);
+                // document.getElementById('ord_form').submit();
+}
+</script>
+
+</html>

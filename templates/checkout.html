@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Checkout</title>
+    <!-- <title>Hoodie checkout</title> -->
+    <script src="https://use.fontawesome.com/f56e4513c5.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/t_c.css">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    
+</head>
+
+<body style="padding-top: 8%;" class="backgrounds">
+    <!-- partial:index.partial.html -->
+    <div class="container">
+        <div class="form-wrapper cf">
+            <div class="five col">
+                <div class="title">
+                    <h2>Checkout</h2>
+                    <img id="c_image" src="../static/mt/gallery/backdrop4.jpg" style="width: 100%;" alt="Valkyre Custom-Hoodie Preview">
+                    <!-- <img id="c_image" src="../static/mt/hblack.png" style="width: 80%;" alt="Valkyre Custom-Hoodie Preview"> -->
+                    <!-- <h3 id="name" class="item">Valkyre Custom Designs </h3> -->
+                    <!-- <h3 id="name" class="item">Custom-Hoodie </h3> -->
+                    <!-- <p id="c_cost" class="price"></p> -->
+                    <h3 style="text-align: center;"> Order Amount : Rs.<span id="mon"> money</span></h3> 
+
+                </div>
+            </div>
+            <div class="seven col">
+                <form class="form">
+                    <input type="text" name="nme" id="nme" placeholder="Name">
+                    <input type="text" name="email" id="email" placeholder="Email">
+                    <input type="tel" name="mob_num" id="mob_num" placeholder="Mobile Number">
+                    <input type="text" name="address" id="address" placeholder="Address">
+                    <!-- <input type="hidden" name=""> -->
+                    <div class="edate">
+                        <p>Select Size :</p>
+                        <div class="select-wrapper">
+                            <select id="size" style="border-style: solid; border-width: 1.1px">
+                                <option value="small">S</option>
+                                <option value="medium">M</option>
+                                <option value="large">L</option>
+                                <option value="xl">XL</option>
+                                <option value="xxl">XXL</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+                <!-- <br> -->
+                <form action="payment" method="POST" style="text-align: center; vertical-align: center" id="ord_form">
+                <input type="hidden" id="od_amount" name="od_amount" value="">
+
+                <button type="submit" style="background-color:black; border-radius: .2rem; height: 36px; line-height: 36px; color:white; font-family: inherit; font-size: 14px; font-weight: 700; padding: 0 1rem; text-align: center;" onclick="getdetail()">Place order</button>
+                </form>
+<!--                 <button style="background-color:black; border-radius: .2rem; height: 36px; line-height: 36px; color:white; font-family: inherit; font-size: 14px; font-weight: 700; padding: 0 1rem;" id="rzp-button1" >Pay</button> -->
+            </div>
+        </div>
+    </div>
+    <!-- partial -->
+
+</body>
+<script src="../static/js/hoodie.js"></script>
+<!-- <script src="https://smtpjs.com/v3/smtp.js"></script> -->
+<script src='https://html2canvas.hertzen.com/dist/html2canvas.js'></script>
+<script src='https://html2canvas.hertzen.com/dist/html2canvas.min.js'></script>
+<script type="text/javascript">     
+    var ord_cost = localStorage.getItem("costmoney");
+    document.getElementById("mon").innerHTML= ord_cost;   
+    function getdetail(){ 
+    //---------------gettting the values-----------------
+    var cust_name = document.getElementById("nme").value;
+    var cust_email = document.getElementById("email").value;
+    var cust_num = document.getElementById("mob_num").value;
+    var cust_addr = document.getElementById("address").value;
+    var cust_siz = document.getElementById("size").value;
+    // alert("name: "+ cust_name+".  email: "+ cust_email+".  number: "+ cust_num+".  address: "+ cust_addr,+".  size: "+ cust_siz);
+    //-------------saving the values in local storage------------------                
+    localStorage.setItem("c_name", cust_name);
+    localStorage.setItem("c_email", cust_email);
+    localStorage.setItem("c_num", cust_num);
+    localStorage.setItem("c_add", cust_addr);
+    localStorage.setItem("c_siz", cust_siz);
+    }
+    document.forms[1].od_amount.value = ord_cost;
+    // document.getElementById('ord_form').submit();
+</script>
+<!-- <script>
+    // document.getElementById('c_cost').innerHTML = 'Rs ' + cost.toString();
+    var ord_cost = localStorage.getItem("costmoney");
+    document.getElementById("mon").innerHTML= ord_cost;
+
+    function submit() {
+
+        var t_email = document.getElementById('email').value;
+        var si = document.getElementById('size').value;
+        var addr = document.getElementById('address').value;
+        // console.log(si,addr,t_email,cost)
+        var b_con = "The Design Cost: Rs." + ord_cost + "<html><br><br></html>Size: " + si.toString()+"<html><br><br></html>Address:" + addr.toString();
+        // console(b_con)
+        Email.send({ //-----Email to Valkyre Designs team mail-----
+            //SecureToken: "be037cb9-75d6-4542-99ab-e50cd0b34f4c",
+            Host: "smtp.gmail.com",
+            Username : "mjb.projects737@gmail.com",
+            Password : "ivvxqdjgcmhfcbzn", // using secure code
+                        //             Host: "smtp.elasticemail.com",
+                        // Username: "wwwanandsuresh@gmail.com",
+                        // Password: "A5BDC18689165F4E2DA81ADF785EF6784A75",
+            //To: 'arindam_bora@hotmail.com',
+            To: 'mbhandary737@gmail.com',
+            From: "mjb.projects737@gmail.com",
+            Subject: "Ordered_designs owner email notification",
+            Body: b_con,
+            // Attachments: [{
+            //     name: "back.png",
+            //     data: ncw2.toDataURL('image/png')
+            // }, {
+            //     name: "front.png",
+            //     data: ncw1.toDataURL('image/png')
+            // }]
+        }).then(
+            message => alert("owner mail sent")
+        );
+        Email.send({ // -----Email to customer as a notification-----
+            //SecureToken: "be037cb9-75d6-4542-99ab-e50cd0b34f4c",
+            Host: "smtp.gmail.com",
+            Username : "mjb.projects737@gmail.com",
+            Password : "ivvxqdjgcmhfcbzn", 
+            // Host: "smtp.elasticemail.com",
+            // Username: "wwwanandsuresh@gmail.com",
+            // Password: "A5BDC18689165F4E2DA81ADF785EF6784A75",
+            // To: 'arindam_bora@hotmail.com',
+            To: t_email,
+            From: "mjb.projects737@gmail.com",
+            Subject: "order placed with Valkyre customs  Customers email notification",
+            Body: "order has been placed, wait for conformation :)" //add payment link here
+        }).then(
+            message => alert("order placed")
+        );
+    }
+</script>
+ --><!-- <script type="text/javascript" src="../static/js/email.js"> </script> -->
+
+<!-- <script>
+    document.getElementById('c_cost').innerHTML = 'Rs ' + cost.toString();
+
+    function submit() {
+
+        var t_email = document.getElementById('email').value;
+        var si = document.getElementById('size').value;
+        console.log(si)
+        var b_con = "the designs and cost: " + cost.toString() + "size: " + si.toString();
+        Email.send({ //-----Email to Valkyre Designs team mail-----
+            //SecureToken: "be037cb9-75d6-4542-99ab-e50cd0b34f4c",
+            Host: "smtp.elasticemail.com",
+            Username: "wwwanandsuresh@gmail.com",
+            Password: "A5BDC18689165F4E2DA81ADF785EF6784A75",
+            //To: 'arindam_bora@hotmail.com',
+            To: 'wwwanandsuresh@gmail.com',
+            From: "wwwanandsuresh@gmail.com",
+            Subject: "Ordered_designs",
+            Body: b_con,
+            Attachments: [{
+                name: "back.png",
+                data: ncw2.toDataURL('image/png')
+            }, {
+                name: "front.png",
+                data: ncw1.toDataURL('image/png')
+            }]
+        }).then(
+            //message => alert(message)
+        );
+        Email.send({ // -----Email to customer as a notification-----
+            //SecureToken: "be037cb9-75d6-4542-99ab-e50cd0b34f4c",
+            Host: "smtp.elasticemail.com",
+            Username: "wwwanandsuresh@gmail.com",
+            Password: "A5BDC18689165F4E2DA81ADF785EF6784A75",
+            // To: 'arindam_bora@hotmail.com',
+            To: t_email,
+            From: "wwwanandsuresh@gmail.com",
+            Subject: "order placed with Valkyre customs",
+            Body: "order has been placed, wait for conformation :)" //add payment link here
+        }).then(
+            message => alert("order placed")
+        );
+    }
+</script> -->
+<!-- <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    var options = {
+        
+        // "key": "rzp_test_v5SSxuo5SLebDV", // Enter the Key ID generated from the Dashboard
+        "key": "rzp_test_u2vYx8CCTRLrTn", // Enter the Key ID generated from the Dashboard
+        "amount": cost.toString() * 100, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise or 500rs
+        "currency": "INR",
+        "name": "Valkyre Customs",
+        "description": "Test Transaction",
+        // "order_id": "order_EtpFyM7tFbvUxK", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+        "handler": function(response) {
+            alert(response.razorpay_payment_id);
+            alert(response.razorpay_order_id);
+            alert(response.razorpay_signature)
+        },
+        "prefill": {
+            "name": "Gaurav Kumar",
+            "email": "gaurav.kumar@example.com",
+            "contact": "9999999999"
+        },
+        "notes": {
+            "address": "Razorpay Corporate Office"
+        },
+    };
+    var rzp1 = new Razorpay(options);
+    document.getElementById('rzp-button1').onclick = function(e) {
+        {
+            // $.ajax({
+            //     useCORS: true,
+            //     type: 'post',
+            //     url: "https://api.razorpay.com/v1/orders",
+            //     contentType: "application/json;",
+            //     data: {
+            //         "amount": 50000,
+            //         "currency": "INR",
+            //         "receipt": "receipt#1",
+            //         "payment_capture": 1
+            //     },
+            //     beforeSend: function(xhr) {
+            //         xhr.setRequestHeader("rzp_test_v5SSxuo5SLebDV", "XSfCJX1qj46BAbZh5CajCMap")
+            //     },
+            //     success: function(response) {
+            //         console.log("Success!!");
+            //     },
+
+            //     error: function(xhr, status, error) {
+            //         console.log("Status of error message" + status + "Error is" + error);
+            //     }
+
+            // });
+            rzp1.open();
+            e.preventDefault();
+        }
+    }
+</script> -->
+</html>

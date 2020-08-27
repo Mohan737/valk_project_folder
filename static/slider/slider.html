@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html style="width: 980px; margin: auto;" align="center" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>page-slider</title>
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <style>
+        .btn-circle {
+            border: black 1px;
+            width: 45px;
+            height: 45px;
+            line-height: 45px;
+            text-align: center;
+            padding: 5px;
+            border-radius: 50%;
+        }
+        
+        .btn-circle-sm {
+            border: black 20px;
+            width: 35px;
+            height: 35px;
+            line-height: 35px;
+            font-size: 0.9rem;
+            border-radius: 50%;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div style="width: 980px; margin: auto;" align="center">
+        <div style="width: 33%;">
+            <!-- partial:index.partial.html -->
+            <div id="colors" style="height: 150px;" class="hide cities slideshow screen-height" data-js="city-slider" data-transition="">
+                <div class="slideshow-inner">
+                    <div class="cities__slider slides">
+                        <div class="cities__slide slide is-active">
+                            <div class="slide__slide-content">
+                                <span></span>
+                                <div style="margin-top: 6px;">
+                                    <br>
+                                    <h4 style="color: black;margin: 0 0 5px 0; font-size: 24px;">Choose Tee Color:</h4>
+                                    <button onclick="cgreen()" style="border-radius: 50%; background: rgb(9, 158, 9); border: 3px solid black; margin: 3px; outline: none;" class="btn btn-circle btn-circle-sm "></button>
+                                    <button onclick="cblue()" style="border-radius: 50%; background: rgb(57, 57, 236); border: 3px solid black; margin: 3px; outline: none;" class="btn btn-circle btn-circle-sm "></button>
+                                    <button onclick="cblack()" style="border-radius: 50%; background: rgb(43, 41, 41); border: 3px solid black; margin: 3px; outline: none;" class="btn btn-circle btn-circle-sm "></button>
+                                    <button onclick="cred()" style="border-radius: 50%; background: rgb(212, 69, 69); border: 3px solid black; margin: 3px; outline: none;" class="btn btn-circle btn-circle-sm "></button>
+                                    <br>
+                                    <button onclick="cmar()" style="border-radius: 50%; background: rgb(124, 23, 23); border: 3px solid black; margin: 3px; outline: none;" class="btn btn-circle btn-circle-sm "></button>
+                                    <button onclick="cneon()" style="border-radius: 50%; background: rgb(163, 253, 27); border: 3px solid black; margin: 3px; outline: none;" class="btn btn-circle btn-circle-sm "></button>
+                                    <button onclick="cwhite()" style="border-radius: 50%;  background: rgb(247, 244, 244); border: 3px solid black; margin: 3px; outline: none;" class="btn btn-circle btn-circle-sm "></button>
+                                </div>
+                            </div>
+                            <div class="image-container">
+                                <img style="display: none;" src="../test images/719602.png" alt="bracelets-bijoux-createur" class="image queue-loading as-background" />
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+                                <filter id="blur">
+                                    <feGaussianBlur stdDeviation="3" />
+                                </filter>
+                            </svg>
+                            </div>
+                        </div>
+                        <div class="cities__slide slide">
+                            <div class="slide__slide-content">
+                                <span></span>
+                                <div style="margin-top: 6px;">
+                                    <br>
+                                    <h4 style="color: black;margin: 0 0 5px 0; font-size: 24px;">Choose Font Color:</h4>
+                                    <button onclick="cgreen() " style="border-radius: 50%; background: rgb(9, 158, 9); border: 3px solid black; margin: 3px; outline: none; " class="btn btn-circle btn-circle-sm "></button>
+                                    <button onclick="cblue() " style="border-radius: 50%; background: rgb(57, 57, 236); border: 3px solid black; margin: 3px; outline: none; " class="btn btn-circle btn-circle-sm "></button>
+                                    <button onclick="cblack() " style="border-radius: 50%; background: rgb(43, 41, 41); border: 3px solid black; margin: 3px; outline: none; " class="btn btn-circle btn-circle-sm "></button>
+                                    <button onclick="cred() " style="border-radius: 50%; background: rgb(212, 69, 69); border: 3px solid black; margin: 3px; outline: none; " class="btn btn-circle btn-circle-sm "></button>
+                                    <br>
+                                    <button onclick="cmar() " style="border-radius: 50%; background: rgb(124, 23, 23); border: 3px solid black; margin: 3px; outline: none; " class="btn btn-circle btn-circle-sm "></button>
+                                    <button onclick="cneon() " style="border-radius: 50%; background: rgb(163, 253, 27); border: 3px solid black; margin: 3px; outline: none; " class="btn btn-circle btn-circle-sm "></button>
+                                    <button onclick="cwhite() " style="border-radius: 50%; background: rgb(247, 244, 244); border: 3px solid black; margin: 3px; outline: none; " class="btn btn-circle btn-circle-sm "></button>
+                                </div>
+                            </div>
+                            <div class="image-container ">
+                                <img style="display: none; " src="../test images/719602.png " alt=" " class="image queue-loading as-background " />
+                                <svg version="1.1 " xmlns="http://www.w3.org/2000/svg ">
+                                <filter id="blur ">
+                                    <feGaussianBlur stdDeviation="3 " />
+                                </filter>
+                            </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="arrows ">
+                        <div class="arrow prev " style="opacity: 1; transform: translate3d(0px, 0px, 0px); ">
+                            <span class="svg svg-arrow-left ">
+                                <svg xmlns="http://www.w3.org/2000/svg " viewBox="0 0 30 26 " enable-background="new 0 0 30 26 "><path d="M13 26c-.3 0-.5-.1-.7-.3l-12-12c-.4-.4-.4-1 0-1.4l12-12c.4-.4 1-.4 1.4 0s.4 1 0 1.4l-11.3 11.3 11.3 11.3c.4.4.4 1 0 1.4-.2.2-.4.3-.7.3z
+                                        "/><path class="arrow__line " d="M29.9 13.1h-28.4 "/></svg>
+                            </span>
+                        </div>
+                        <div class="arrow next " style="opacity: 1; transform: translate3d(0px, 0px, 0px); ">
+                            <span class="svg svg-arrow-right ">
+                                <svg xmlns="http://www.w3.org/2000/svg " viewBox="0 0 30 26 " enable-background="new 0 0 30 26 "><path d="M16.9 0c.3 0 .5.1.7.3l12 12c.4.4.4 1 0 1.4l-12 12c-.4.4-1 .4-1.4 0-.4-.4-.4-1 0-1.4l11.3-11.3-11.3-11.3c-.4-.4-.4-1 0-1.4.2-.2.5-.3.7-.3z
+                                        "/><path class="arrow__line " d="M0 12.9h28.5 "/></svg>
+                                </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- partial -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js'></script>
+    <script src="./pages.js "></script>
+
+</body>
+
+</html>

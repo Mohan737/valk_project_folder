@@ -1,0 +1,295 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    color: #231F20;
+    background-color: #F2F2F1;
+}
+
+a {
+    text-decoration: none;
+}
+
+p,
+li,
+a {
+    font-size: 14px;
+    line-height: 160%;
+}
+
+input,
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+}
+
+select::-ms-expand {
+    /* for IE 11 */
+    display: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 200;
+    position: relative;
+    margin-bottom: 40px;
+}
+
+
+/* GRID */
+
+.twelve {
+    width: 100%;
+}
+
+.eleven {
+    width: 91.53%;
+}
+
+.ten {
+    width: 83.06%;
+}
+
+.nine {
+    width: 74.6%;
+}
+
+.eight {
+    width: 66.13%;
+}
+
+.seven {
+    width: 57.66%;
+}
+
+.six {
+    width: 49.2%;
+}
+
+.five {
+    width: 40.73%;
+}
+
+.four {
+    width: 32.26%;
+}
+
+.three {
+    width: 23.8%;
+}
+
+.two {
+    width: 15.33%;
+}
+
+.one {
+    width: 6.866%;
+}
+
+
+/* COLUMNS */
+
+.col {
+    display: block;
+    float: left;
+    margin: 1% 0 1% 1.6%;
+}
+
+.col:first-of-type {
+    margin-left: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 940px;
+    margin: 0 auto;
+    position: relative;
+}
+
+
+/* CLEARFIX */
+
+.cf:before,
+.cf:after {
+    content: " ";
+    display: table;
+}
+
+.cf:after {
+    clear: both;
+}
+
+.cf {
+    *zoom: 1;
+}
+
+
+/* FORM */
+
+.form-wrapper {
+    padding: 20px 10px;
+    background: linear-gradient(to right, #fff 40.73%, #ad4444 40.83%);
+    position: relative;
+    overflow: hidden;
+    color: #ad4444;
+}
+
+.form-wrapper h2:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -12px;
+    width: 30px;
+    height: 2px;
+    background-color: #ad4444;
+}
+
+.five img {
+    width: 45%;
+    height: auto;
+    margin: 50px auto 30px auto;
+    display: block;
+}
+
+.five .item,
+.five .price {
+    text-align: center;
+    margin: 5px auto;
+}
+
+form,
+.title {
+    width: 75%;
+    margin: 0 auto;
+}
+
+form {
+    margin-top: 15%;
+}
+.form1 {
+    margin-top: 15%;
+        /*border: 1px solid;*/
+    padding: 1px;
+    border-radius: 25px;
+    border-style: outset;
+}
+input {
+    border: none;
+    border-bottom: 1px solid #fff;
+    background-color: transparent;
+    padding: 10px 0px;
+    display: block;
+    margin: 15px auto;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #fff;
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.edate {
+    margin-top: 20px;
+}
+
+.edate p {
+    color: #fff;
+    font-size: 12px;
+}
+
+select {
+    background: transparent;
+    border: none;
+    font-size: 12px;
+    font-family: 'Open Sans', sans-serif;
+    padding: 5px;
+    width: 30%;
+    color: #fff;
+    background-color: #ad4444;
+    outline: none;
+}
+
+.select-wrapper {
+    position: relative;
+    display: inline;
+    margin-right: 30px;
+}
+
+.select-wrapper:before {
+    content: '';
+    font-family: 'Open Sans', sans-serif;
+    color: #fff;
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    top: 4px;
+    pointer-events: none;
+    font-size: 12px;
+}
+
+option {
+    background: #fff;
+    color: #ad4444;
+}
+
+::-webkit-input-placeholder {
+    color: #fff;
+    font-size: 12px;
+}
+
+::-moz-placeholder {
+    color: #fff;
+    font-size: 12px;
+}
+
+:-ms-input-placeholder {
+    color: #fff;
+    font-size: 12px;
+}
+
+:-moz-placeholder {
+    color: #fff;
+    font-size: 12px;
+}
+
+.submit-wrapper {
+    text-align: right;
+}
+
+input.submit {
+    border: 1px solid #fff;
+    color: #fff;
+    display: inline-block;
+    width: auto;
+    cursor: pointer;
+    padding: 8px 20px;
+    margin: 30px 0;
+    font-size: 12px;
+    -webkit-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+
+input.submit:hover {
+    background-color: #fff;
+    color: #2c3e50;
+}
+
+.backgrounds {
+    background: #000000;
+    color: black;
+    background-image: url("../mt/background/spots.png"), url("../mt/background/spots.png"), url("../mt/background/arrow.png"), url("../mt/background/spots.png"), url("../mt/background/arrow.png"), url("../mt/background/spots.png");
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+    background-position: 2% 10%, 95% 99%, -4% 99%, 89% -2%, 111% 50%, 50% 140%;
+    background-size: 15%, 8%, 20%, 10%, 25%, 20%;
+}

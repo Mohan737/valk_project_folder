@@ -1,0 +1,114 @@
+@font-face {
+    font-family: 'acid-label';
+    src: URL('../fonts/acid-label/acid_label.TTF') format('truetype');
+}
+
+@font-face {
+    font-family: 'antfarm';
+    src: URL('../fonts/antfarm/ANTFGC__.TTF') format('truetype');
+}
+
+@font-face {
+    font-family: 'bad-mofo';
+    src: URL('../fonts/bad-mofo/BadMofo.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'black-bruno';
+    src: URL('../fonts/black-bruno/ASDGF.otf') format('truetype');
+}
+
+@font-face {
+    font-family: 'blockletter';
+    src: URL('../fonts/blockletter/Blockletter.otf') format('truetype');
+}
+
+@font-face {
+    font-family: 'typewriter';
+    src: URL('../fonts/bohemian-typewriter/Bohemian\ Typewriter.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'boblique';
+    src: URL('../fonts/BT_Brik/BT\ Brik\ Oblique.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'rock-it';
+    src: URL('../fonts/rock-it/Rockit.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'gm';
+    src: URL('../fonts/pricedown/pricedown\ bl.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'mv';
+    src: URL('../fonts/mv/mvb/Marvin\ Visions\ Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'sw';
+    src: URL('../fonts/sw/SHOCKWAVE\ FREE.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'sam';
+    src: URL('../fonts/the-stamshons/The\ Stamshons\ Demo.otf') format('truetype');
+}
+
+@font-face {
+    font-family: 'cap';
+    src: URL('../fonts/capture-it/Capture\ it.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'du';
+    src: URL('../fonts/DueDate.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'por';
+    src: URL('../fonts/portico.otf') format('truetype');
+}
+
+@font-face {
+    font-family: 'ff1';
+    src: URL('../fonts/FFF/futur.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'ff2';
+    src: URL('../fonts/FFF/futura\ bold\ font.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'ff3';
+    src: URL('../fonts/FFF/futura\ extra\ black\ font.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'ff4';
+    src: URL('../fonts/FFF/futurao.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'ff5';
+    src: URL('../fonts/FFF/futurab.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'ff6';
+    src: URL('../fonts/FFF/futura\ light\ italic\ font.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'ff7';
+    src: URL('../fonts/FFF/futura\ medium\ condensed\ bt.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'ff8';
+    src: URL('../fonts/FFF/tt0205m_.ttf') format('truetype');
+}
