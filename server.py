@@ -4,7 +4,7 @@ import json
 import shortuuid
 
 app = Flask(__name__)
-key_id, key_secret = "rzp_test_u2vYx8CCTRLrTn", "gdtT2o0amSpGXR9ZhoIIfATX"     #Key-ID & Key-Secret generated from the Razorpay Dashboard
+key_id, key_secret = "rzp_live_4JqtHb0zZsji0V", "jPfuK3OndzZdgRFuI3Sx01VB"     #Key-ID & Key-Secret generated from the Razorpay Dashboard
 razorpay_client = razorpay.Client(auth=(key_id, key_secret))
 
 

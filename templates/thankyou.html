@@ -19,9 +19,7 @@
             <div class="five col">
                 <div class="title">
                     <h2>Valkyre Custom Design</h2>
-                    <!-- <img id="c_image" src="../static/mt/gallery/kanye.jpg" style="width: 100%;" alt="Valkyre Customs"> -->
                     <img id="c_image" src="../static/mt/gallery/backdrop4.jpg" style="width: 100%;" alt="Valkyre Customs">
-                    <!-- <p id="name" class="item">Amount : <h4 id="c_cost" class="price"></h4></p> -->
                     
                 </div>
             </div>
@@ -36,16 +34,8 @@
                 <p style="text-align: center;color: white"><strong>Payment ID :- </strong>{{payment_id}}</p>
                 <br>
                 <br>
-                <!-- <button  style="text-align: center;"><a href="./homepage.html"> Link back to homepage</a></button> -->
-
-<!--                 <center> <button style="background-color:black; border-radius: .8rem; height: 42px; line-height: 36px; color:white; font-family: inherit; font-size: 16px; font-weight: 700; padding: 0 1rem; align-self: center;" onclick="document.location='./homepage.html';"> Continue Shopping</button></center> -->   
-
-                        <!-- <center> <button style="background-color:black; border-radius: .8rem; height: 42px; line-height: 36px; color:white; font-family: inherit; font-size: 16px; font-weight: 700; padding: 0 1rem; align-self: center;" onclick='window.open("homepage.html");'> Continue Shopping</button></center>  -->
-                <!-- <center> <button style="background-color:black; border-radius: .8rem; height: 42px; line-height: 36px; color:white; font-family: inherit; font-size: 16px; font-weight: 700; padding: 0 1rem; align-self: center;" onclick="window.location.href = 'https://valkyreclothing.com/';"> Continue Shopping</button></center>  -->
+                
                 <center> <button style="background-color:black; border-radius: .8rem; height: 42px; line-height: 36px; color:white; font-family: inherit; font-size: 16px; font-weight: 700; padding: 0 1rem; align-self: center;" onclick='window.open("https://valkyreclothing.com/","_blank" );'> Continue Shopping</button></center> 
-
-                        <!-- <center> <button style="background-color:black; border-radius: .8rem; height: 42px; line-height: 36px; color:white; font-family: inherit; font-size: 16px; font-weight: 700; padding: 0 1rem; align-self: center;" > <a href="https://valkyreclothing.com/" >Continue Shopping</a></button></center>    -->
-                <!-- <h3 style="text-align: center;"><a href="./homepage.html"> Link back to homepage</a></h3> -->
             </div>
         </div>
     </div>
@@ -54,11 +44,6 @@
 <script src="../static/js/hoodie.js"></script>
 <script src="https://smtpjs.com/v3/smtp.js"></script>
 <script>
-    // document.getElementById('c_cost').innerHTML = 'Rs ' + cost.toString();
-    // var ord_cost = localStorage.getItem("costmoney");
-    // document.getElementById("mon").innerHTML= ord_cost;
-
-    // function notify_mails() {
         var name = localStorage.getItem("c_name");
         var cus_mail = localStorage.getItem("c_email");
         var num = localStorage.getItem("c_num");
@@ -70,58 +55,18 @@
         var u_img2 = localStorage.getItem("uplimg2");
         // console.log(name,cus_mail,num,addr,size+"FRONT"+ f_img + "BACK"+b_img+"UPLOADED"+u_img)
 
-        // var t_email = document.getElementById('email').value;
-        // var si = document.getElementById('size').value;
-        // var addr = document.getElementById('address').value;
-        // console.log(si,addr,t_email,cost)
         own_sub = "Valkyre Customs Order ID :- {{pay_order_id}} "
         var b_con = "The Design Cost: Rs.{{amount}} <html><br><br></html>Size: " + size.toString()+"<html><br><br><br></html>Below are the Customer Details:- <html><br><br></html>Name :  "+name.toString()+"<html><br><br></html>Email :  "+ cus_mail.toString() +"<html><br><br></html>Contact Number :  "+num.toString()+"<html><br><br></html>Address:  " + addr.toString()+"<html><br><br><br></html>Order Details: <html><br><br></html> Order ID :- {{pay_order_id}} <html><br><br></html> Payment ID :- {{payment_id}}";
         // console(b_con)
         var cus_body = "Thank you for shopping with us.Your order has been placed, wait for confirmation ☺.<html><br></html> Please find the Designs in the Attachment. <html><br><br><br></html>Order Details: <html><br><br></html>Order Amount: Rs.{{amount}} <html><br><br></html>Order ID :- {{pay_order_id}} <html><br><br></html> Payment ID :- {{payment_id}}";
-        Email.send({ //-----Email to Valkyre Designs team mail-----
-            //SecureToken: "be037cb9-75d6-4542-99ab-e50cd0b34f4c",
-            Host: "smtp.gmail.com",
-            Username : "valkyrecustoms@gmail.com",
-            Password : "jsasqnacyobazsvo", // using secure code
-                        //             Host: "smtp.elasticemail.com",
-                        // Username: "wwwanandsuresh@gmail.com",
-                        // Password: "A5BDC18689165F4E2DA81ADF785EF6784A75",
-            //To: 'arindam_bora@hotmail.com',
-            To: 'valkyrecustoms@gmail.com',
-            From: "valkyrecustoms@gmail.com",
-            Subject: own_sub,
-            Body: b_con,
-            Attachments : [
-            {
-                name : "front.png",
-                data:f_img
-            }, {
-                name : "back.png",
-                data:b_img
-            },{
-                name : "uploaded_image1.png",
-                data:u_img1 
-            }]
-            // Attachments: [{
-            //     name: "back.png",
-            //     data: ncw2.toDataURL('image/png')
-            // }, {
-            //     name: "front.png",
-            //     data: ncw1.toDataURL('image/png')
-            // }]
-        }).then(
-            message => console.log("one file owner mail sent")
-            // message => alert("owner mail sent")
-        );
+
+
+// --------------$$$$$$$----------  Two IMAGE UPLOADED MAIL  --------------$$$$$$$----------
                 Email.send({ //-----Email to Valkyre Designs team mail-----
-            //SecureToken: "be037cb9-75d6-4542-99ab-e50cd0b34f4c",
             Host: "smtp.gmail.com",
             Username : "valkyrecustoms@gmail.com",
             Password : "jsasqnacyobazsvo", // using secure code
-                        //             Host: "smtp.elasticemail.com",
-                        // Username: "wwwanandsuresh@gmail.com",
-                        // Password: "A5BDC18689165F4E2DA81ADF785EF6784A75",
-            //To: 'arindam_bora@hotmail.com',
+
             To: 'valkyrecustoms@gmail.com',
             From: "valkyrecustoms@gmail.com",
             Subject: own_sub,
@@ -140,31 +85,21 @@
                 name : "uploaded_image2.png",
                 data:u_img2
             }]
-            // Attachments: [{
-            //     name: "back.png",
-            //     data: ncw2.toDataURL('image/png')
-            // }, {
-            //     name: "front.png",
-            //     data: ncw1.toDataURL('image/png')
-            // }]
+
         }).then(
             message => console.log("all file owner mail sent")
-            // message => alert("owner mail sent")
         );
-        Email.send({ // -----Email to customer as a notification-----
-            //SecureToken: "be037cb9-75d6-4542-99ab-e50cd0b34f4c",
+
+// --------------$$$$$$$----------  ONE IMAGE UPLOADED MAIL  --------------$$$$$$$----------
+        Email.send({ //-----Email to Valkyre Designs team mail-----
             Host: "smtp.gmail.com",
             Username : "valkyrecustoms@gmail.com",
-            Password : "jsasqnacyobazsvo", 
-            // Host: "smtp.elasticemail.com",
-            // Username: "wwwanandsuresh@gmail.com",
-            // Password: "A5BDC18689165F4E2DA81ADF785EF6784A75",
-            // To: 'arindam_bora@hotmail.com',
-            To: cus_mail,
+            Password : "jsasqnacyobazsvo", // using secure code
+
+            To: 'valkyrecustoms@gmail.com',
             From: "valkyrecustoms@gmail.com",
-            Subject: "Order Placed with Valkyre Customs ",
-            Body: cus_body, //add payment link here
-            // Body: "order has been placed, wait for conformation :)" //add payment link here
+            Subject: own_sub,
+            Body: b_con,
             Attachments : [
             {
                 name : "front.png",
@@ -172,21 +107,65 @@
             }, {
                 name : "back.png",
                 data:b_img
-            // },{
-            //     name : "uploaded_image.png",
-            //     data:u_img  
-            // 
+            },{
+                name : "uploaded_image1.png",
+                data:u_img1 
+            }]
+
+        }).then(
+            message => console.log("one file owner mail sent")
+        );
+
+// --------------$$$$$$$----------  Only Text UPLOADED MAIL  --------------$$$$$$$----------
+        Email.send({ //-----Email to Valkyre Designs team mail-----
+            Host: "smtp.gmail.com",
+            Username : "valkyrecustoms@gmail.com",
+            Password : "jsasqnacyobazsvo", // using secure code
+
+            To: 'valkyrecustoms@gmail.com',
+            From: "valkyrecustoms@gmail.com",
+            Subject: own_sub,
+            Body: b_con,
+            Attachments : [
+            {
+                name : "front.png",
+                data:f_img
+            }, {
+                name : "back.png",
+                data:b_img 
+            }]
+
+        }).then(
+            message => console.log("only text owner mail sent")
+        );
+
+
+
+// --------------$$$$$$$----------  CUSTOMER MAIL  --------------$$$$$$$----------
+        Email.send({ // -----Email to customer as a notification-----
+            //SecureToken: "be037cb9-75d6-4542-99ab-e50cd0b34f4c",
+            Host: "smtp.gmail.com",
+            Username : "valkyrecustoms@gmail.com",
+            Password : "jsasqnacyobazsvo", 
+
+            To: cus_mail,
+            From: "valkyrecustoms@gmail.com",
+            Subject: "Order Placed with Valkyre Customs ",
+            Body: cus_body, 
+            Attachments : [
+            {
+                name : "front.png",
+                data:f_img
+            }, {
+                name : "back.png",
+                data:b_img 
             }]
         }).then(
             message => console.log("order placed mail sent")
-            // message => alert("order placed")
         );
         localStorage.clear(); // clears the local storage variables  
         console.log("Local Storage Cleared")
-        // var name = localStorage.getItem("c_name");
-        // alert(name)
-    // }
-</script>
+    </script>
 </body>
 
 </html>
