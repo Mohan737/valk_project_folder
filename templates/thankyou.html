@@ -68,6 +68,9 @@
         var b_img = localStorage.getItem("back");
         var u_img1 = localStorage.getItem("uplimg1");
         var u_img2 = localStorage.getItem("uplimg2");
+        var f_txt = localStorage.getItem("ftext");
+        var b_txt = localStorage.getItem("btext");
+
         // console.log(name,cus_mail,num,addr,size+"FRONT"+ f_img + "BACK"+b_img+"UPLOADED"+u_img)
 
         // var t_email = document.getElementById('email').value;
@@ -75,7 +78,7 @@
         // var addr = document.getElementById('address').value;
         // console.log(si,addr,t_email,cost)
         own_sub = "Valkyre Customs Order ID :- {{pay_order_id}} "
-        var b_con = "The Design Cost: Rs.{{amount}} <html><br><br></html>Size: " + size.toString()+"<html><br><br><br></html>Below are the Customer Details:- <html><br><br></html>Name :  "+name.toString()+"<html><br><br></html>Email :  "+ cus_mail.toString() +"<html><br><br></html>Contact Number :  "+num.toString()+"<html><br><br></html>Address:  " + addr.toString()+"<html><br><br><br></html>Order Details: <html><br><br></html> Order ID :- {{pay_order_id}} <html><br><br></html> Payment ID :- {{payment_id}}";
+        var b_con = "The Design Cost: Rs.{{amount}} <html><br><br></html>Size: " + size.toString()+"<html><br><br><br></html>Text Print Details(If any):- <html><br><br></html> "+f_txt.toString()+b_txt.toString()+"<html><br><br><br><br></html>Below are the Customer Details:- <html><br><br></html>Name :  "+name.toString()+"<html><br><br></html>Email :  "+ cus_mail.toString() +"<html><br><br></html>Contact Number :  "+num.toString()+"<html><br><br></html>Address:  " + addr.toString()+"<html><br><br><br></html>Order Details: <html><br><br></html> Order ID :- {{pay_order_id}} <html><br><br></html> Payment ID :- {{payment_id}}";
         // console(b_con)
         var cus_body = "Thank you for shopping with us.Your order has been placed, wait for confirmation ☺.<html><br></html> Please find the Designs in the Attachment. <html><br><br><br></html>Order Details: <html><br><br></html>Order Amount: Rs.{{amount}} <html><br><br></html>Order ID :- {{pay_order_id}} <html><br><br></html> Payment ID :- {{payment_id}}";
 

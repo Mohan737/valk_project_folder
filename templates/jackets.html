@@ -470,7 +470,7 @@
                                 <div class="switch-field" style="margin-left: 26px;">
                                     <!-- <input onclick="setf1()" type="radio" id="radio-three" name="switch-two" value="t" checked/>
                                     <label for="radio-three">Tee</label> -->
-                                    <input onclick="setf2()" type="radio" id="radio-four" name="switch-two" value="f" />
+                                    <input onclick="setf2()" type="radio" id="radio-four" name="switch-two" value="f" checked/>
                                     <label for="radio-four">Font</label>
                                     <input onclick="reup()" type="radio" id="radio-five" name="switch-two" value="no" />
                                     <label for="radio-five">Upload</label>
@@ -614,6 +614,21 @@
         // console.log("amount: "+ money);
         //-------------saving the values in local storage------------------                
         localStorage.setItem("costmoney", money);
+        
+        var ffs = document.getElementById("textoutput").style.fontSize
+        var fff = document.getElementById("textoutput").style.fontFamily
+        var ftext = document.getElementById("textoutput").textContent 
+        var fronttext = "Front Text:-  " +ftext+"<html><br></html>Font-Family:-  " + fff+ "<html><br></html>Font-Size:-  "+ffs
+        localStorage.setItem("ftext", fronttext);
+        console.log(fronttext)
+
+
+        var rfs = document.getElementById("reartext").style.fontSize
+        var rff = document.getElementById("reartext").style.fontFamily
+        var rtext = document.getElementById("reartext").textContent 
+        var backtext = "<html><br><br></html>Back Text:-  " +rtext+"<html><br></html>Font-Family:-  " + rff+ "<html><br></html>Font-Size:-  "+rfs
+        localStorage.setItem("btext", backtext);
+        console.log(backtext)
         // var inputF = document.getElementById("od_amount");
         // inputF.setAttribute('value', money);
         // document.getElementById('od_amount').innerHTML = money

@@ -2,11 +2,11 @@ var tf = 1;
 
 var gr = 1;
 
-const cost = 2999;
-document.getElementById('amnt').innerHTML = cost
+// const cost = 2999;
+// document.getElementById('amnt').innerHTML = cost
 
 
-// var cost = 1170;
+var cost = 2999;
 
 var f1 = [0];
 var f2 = [0];
@@ -70,52 +70,52 @@ function removeupload() {
 
 }
 
-// function priceCal() {
-//     var im1 = document.getElementById('file-image');
-//     var im2 = document.getElementById('back-image');
-//     var t1 = document.getElementById('textoutput');
-//     var t2 = document.getElementById('reartext');
-//     var i_cost = 1299;
-//     var inc = 0.025;
-//     ind += 1;
-//     var fta = t1.offsetHeight * t1.offsetWidth;
-//     if (fta == 0)
-//         f1.push(f1[ind - 1]);
-//     else
-//         f1.push(fta);
-//     var bta = t2.offsetHeight * t2.offsetWidth;
-//     if (bta == 0)
-//         f2.push(f2[ind - 1]);
-//     else
-//         f2.push(bta);
-//     var fima = im1.offsetHeight * im1.offsetWidth;
-//     if (fima == 0)
-//         f3.push(f3[ind - 1]);
-//     else
-//         f3.push(fima);
-//     var bima = im2.offsetHeight * im2.offsetWidth;
-//     if (bima == 0)
-//         f4.push(f4[ind - 1]);
-//     else
-//         f4.push(bima);
-//     fta1 = f1[ind] - f1[ind - 1];
-//     bta1 = f2[ind] - f2[ind - 1];
-//     fima1 = f3[ind] - f3[ind - 1];
-//     bima1 = f4[ind] - f4[ind - 1];
-//     cost += (fta1 + bta1) * inc;
-//     if (im1.className)
-//         cost += 0;
-//     else
-//         cost += fima1 * (inc + 0.0012);
-//     if (im2.className)
-//         cost += 0
-//     else
-//         cost += bima1 * (inc + 0.0009);
-//     if (cost > i_cost)
-//         document.getElementById('amnt').innerHTML = Math.round(cost, 5);
-//     else
-//         document.getElementById('amnt').innerHTML = Math.round(i_cost);
-// }
+function priceCal() {
+    var im1 = document.getElementById('file-image');
+    var im2 = document.getElementById('back-image');
+    var t1 = document.getElementById('textoutput');
+    var t2 = document.getElementById('reartext');
+    var i_cost = 1299;
+    var inc = 0.025;
+    ind += 1;
+    var fta = t1.offsetHeight * t1.offsetWidth;
+    if (fta == 0)
+        f1.push(f1[ind - 1]);
+    else
+        f1.push(fta);
+    var bta = t2.offsetHeight * t2.offsetWidth;
+    if (bta == 0)
+        f2.push(f2[ind - 1]);
+    else
+        f2.push(bta);
+    var fima = im1.offsetHeight * im1.offsetWidth;
+    if (fima == 0)
+        f3.push(f3[ind - 1]);
+    else
+        f3.push(fima);
+    var bima = im2.offsetHeight * im2.offsetWidth;
+    if (bima == 0)
+        f4.push(f4[ind - 1]);
+    else
+        f4.push(bima);
+    fta1 = f1[ind] - f1[ind - 1];
+    bta1 = f2[ind] - f2[ind - 1];
+    fima1 = f3[ind] - f3[ind - 1];
+    bima1 = f4[ind] - f4[ind - 1];
+    cost += (fta1 + bta1) * inc;
+    if (im1.className)
+        cost += 0;
+    else
+        cost += fima1 * (inc + 0.0012);
+    if (im2.className)
+        cost += 0
+    else
+        cost += bima1 * (inc + 0.0009);
+    if (cost > i_cost)
+        document.getElementById('amnt').innerHTML = Math.round(cost, 5);
+    else
+        document.getElementById('amnt').innerHTML = Math.round(i_cost);
+}
 
 function addtext() {
     document.getElementById('cost').classList.remove("hide");
@@ -132,7 +132,7 @@ function addtext() {
         document.getElementById('dirb').classList.remove("hide");
         document.getElementById("reartext").innerHTML = ntex;
     }
-    //priceCal();
+    priceCal();
     document.getElementById('texx').classList.remove("hide");
     var xyz = document.getElementById('file-upload-form')
     document.getElementById('file-upload-form').style.marginTop = "5px";
@@ -156,7 +156,7 @@ function changeS() {
         document.getElementById("back-image").style.width = wi;
     }
     console.log('changed')
-    //priceCal();
+    priceCal();
 }
 
 
@@ -166,8 +166,8 @@ function changet() {
         document.getElementById("textoutput").style.fontSize = si;
     else
         document.getElementById("reartext").style.fontSize = si;
-    console.log('changed')
-    //priceCal();
+    console.log('changed font size:'+si)
+    priceCal();
 }
 
 function rottee() {
